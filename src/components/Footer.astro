@@ -1,22 +1,26 @@
 ---
+const currentYear = new Date().getFullYear();
 
+// 1. Rute Halaman Navigasi Utama
 const navLinks = [
-  { name: "About Mantik", href: "#about" },
-  { name: "Solusi & Layanan", href: "#solusi" },
-  { name: "Filosofi Teknologi", href: "#about" },
-  { name: "Diskusi Proyek", href: "#kontak" },
+  { name: "About Mantik", href: "/about" },
+  { name: "Solusi Terpadu", href: "/solusi" },
+  { name: "What We Do", href: "/what-we-do" },
+  { name: "Portofolio Proyek", href: "/proyek" },
+  { name: "Diskusi Proyek", href: "/#kontak" },
 ];
 
+// 2. Rute 9 Layanan Spesifik
 const solusiLinks = [
-  "Enterprise",
-  "Custom Web Development",
-  "Aplikasi Mobile",
-  "Aplikasi Desktop",
-  "Integrasi AI",
-  "IoT",
-  "Cyber Security",
-  "Data Analyst",
-  "Business Intelligence",
+  { name: "Enterprise", href: "/layanan/enterprise" },
+  { name: "Custom Web Development", href: "/layanan/custom-web-development" },
+  { name: "Aplikasi Mobile", href: "/layanan/aplikasi-mobile" },
+  { name: "Aplikasi Desktop", href: "/layanan/aplikasi-desktop" },
+  { name: "Integrasi AI", href: "/layanan/integrasi-ai" },
+  { name: "IoT", href: "/layanan/iot" },
+  { name: "Cyber Security", href: "/layanan/cyber-security" },
+  { name: "Data Analyst", href: "/layanan/data-analyst" },
+  { name: "Business Intelligence", href: "/layanan/business-intelligence" },
 ];
 ---
 
@@ -25,7 +29,7 @@ const solusiLinks = [
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-zinc-800">
       
-      <!-- Kolom 1: Logo & Tagline Sesuai Gambar 2 (4 Kolom Grid) -->
+      <!-- Kolom 1: Logo & Tagline (4 Kolom Grid) -->
       <div class="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-6">
         <a href="/" class="inline-block mb-6">
           <img 
@@ -65,7 +69,7 @@ const solusiLinks = [
         </ul>
       </div>
 
-      <!-- Kolom 3: Solusi Sesuai Gambar 1 (3 Kolom Grid) -->
+      <!-- Kolom 3: Solusi (3 Kolom Grid - Terhubung ke Route Layanan) -->
       <div class="lg:col-span-3">
         <h4 class="text-sm font-medium text-white tracking-wider uppercase mb-6">
           Solusi
@@ -74,17 +78,17 @@ const solusiLinks = [
           {solusiLinks.map((item) => (
             <li>
               <a 
-                href="#solusi" 
+                href={item.href} 
                 class="text-sm font-light text-zinc-400 hover:text-white transition-colors duration-200 inline-block"
               >
-                {item}
+                {item.name}
               </a>
             </li>
           ))}
         </ul>
       </div>
 
-      <!-- Kolom 4: Hubungi Kami (3 Kolom Grid - Sesuai Kode Kamu) -->
+      <!-- Kolom 4: Hubungi Kami (3 Kolom Grid) -->
       <div class="lg:col-span-3">
         <h4 class="text-sm font-medium text-white tracking-wider uppercase mb-6">
           Hubungi Kami
@@ -143,7 +147,7 @@ const solusiLinks = [
 
     <!-- Copyright Bar Bawah -->
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 font-light gap-4">
-      <p>© 2026 PT Mantik Teknologi Nusantara. All rights reserved.</p>
+      <p>© {currentYear} PT Mantik Teknologi Nusantara. All rights reserved.</p>
       <p class="tracking-wide">Technology Solutions Partner</p>
     </div>
 
