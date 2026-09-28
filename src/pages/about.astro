@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Tag kapabilitas yang disarikan langsung dari deskripsi
+const focusAreas = [
+  "Website & Web Portal",
+  "Aplikasi Mobile & Desktop",
+  "Sistem Informasi Terpadu",
+  "Enterprise System",
+  "Business Automation",
+  "System Integration",
+  "Data-Driven Solutions",
+  "Modern Architecture",
+];
+---
+
+<Layout 
+  title="Tentang Kami - PT Mantik Teknologi Nusantara"
+  description="Kami memahami bisnis terlebih dahulu sebelum membangun teknologi. Solusi digital berdampak nyata untuk pertumbuhan organisasi Anda."
+>
+  <Navbar />
+
+  <main class="pt-20 bg-white overflow-hidden min-h-screen">
+    
+    <!-- ==============================================
+         SECTION 01 — WHO WE ARE
+    =============================================== -->
+    <section class="py-10 lg:py-10 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Header Bagian Atas: Penanda Section & Eyebrow -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-3">
+            <!-- Eyebrow Pill -->
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#fcedec] border border-[#f5d0cf]">
+              <span class="text-xs sm:text-[13px] font-medium text-[#851919] tracking-tight">
+                About Mantik
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Konten Grid Utama (12 Kolom) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Kolom Kiri: Headline & Deskripsi (7 Kolom) -->
+          <div class="lg:col-span-7 flex flex-col">
+            
+            <!-- Headline Utama (Merah Mantik, font-medium) -->
+            <h1 class="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold tracking-tight text-[#851919] leading-[1.22] mb-8">
+              We Understand Business Before We Build Technology.
+            </h1>
+
+            <!-- Paragraf Isian -->
+            <div class="space-y-6 text-zinc-700 text-[15px] sm:text-base font-normal leading-relaxed text-justify sm:text-left">
+              <p>
+                <strong class="font-medium text-zinc-900">PT Mantik Teknologi Nusantara</strong> adalah perusahaan teknologi yang membantu perusahaan, organisasi, dan institusi memanfaatkan teknologi untuk menyelesaikan permasalahan nyata, meningkatkan efisiensi, dan menciptakan dampak yang lebih luas.
+              </p>
+
+              <p class="text-zinc-600 font-light">
+                Kami merancang dan membangun solusi digital berdasarkan kebutuhan nyata setiap pengguna, mulai dari website, aplikasi, sistem informasi, enterprise system, business automation, hingga system integration dan solusi berbasis data serta teknologi modern.
+              </p>
+            </div>
+
+            <!-- Area Cakupan / Solusi Digital Kami -->
+            <div class="mt-10 pt-8 border-t border-zinc-100">
+              <span class="text-xs font-mono uppercase tracking-wider text-zinc-400 block mb-4">
+                Ruang Lingkup Solusi 
+              </span>
+              <div class="flex flex-wrap gap-2">
+                {focusAreas.map((area) => (
+                  <span class="text-xs sm:text-[13px] font-light bg-zinc-50 border border-zinc-200/80 text-zinc-700 px-3.5 py-1.5 rounded-xs transition-colors hover:border-[#851919]/40 hover:text-[#851919]">
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="mt-10 flex items-center gap-4">
+              <a
+                href="/#cta"
+                class="inline-flex items-center gap-2.5 px-6 py-3 bg-[#851919] hover:bg-[#6c1414] text-white text-sm font-medium tracking-wide transition-all duration-200 rounded-xs shadow-xs group"
+              >
+                <span>Mulai Diskusi Proyek</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+
+              <a
+                href="/solusi"
+                class="inline-flex items-center px-6 py-3 border border-zinc-300 hover:border-[#851919] text-zinc-700 hover:text-[#851919] text-sm font-medium tracking-wide transition-all duration-200 rounded-xs"
+              >
+                Lihat Solusi Kami
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Komposisi Visual Editorial (5 Kolom) -->
+          <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+            <div class="relative w-full max-w-md mx-auto">
+              
+              <!-- Balok Merah Asimetris Belakang (#851919) -->
+              <div class="absolute -top-5 -right-5 w-40 h-28 bg-[#851919] z-0"></div>
+
+              <!-- Bingkai Gambar Utama -->
+              <div class="relative z-10 overflow-hidden shadow-xl bg-zinc-100 group">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop"
+                  alt="Mantik Engineering and Strategic Planning Team"
+                  class="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <!-- Balok Gelap (#232325) Kiri Bawah -->
+              <div class="absolute -bottom-6 -left-6 w-36 h-24 bg-[#232325] z-0"></div>
+
+              <!-- Floating Quote Card (Aksen Editorial Bersih) -->
+              <div class="absolute -bottom-4 right-4 z-20 bg-white/95 backdrop-blur-md p-5 border border-zinc-200/80 shadow-lg max-w-[260px]">
+                <span class="text-xs font-mono text-[#851919] block mb-1">01 / IMPACT</span>
+                <p class="text-xs text-zinc-800 font-medium leading-snug">
+                  Membangun teknologi yang bukan sekadar bekerja, tetapi menciptakan nilai nyata.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- ==============================================
+         SECTION: OUR PERSPECTIVE
+    =============================================== -->
+    <section class="py-20 lg:py-28 bg-[#fbfbfb] border-t border-zinc-200/60 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Grid Utama: Visual di Kiri, Teks di Kanan -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Kolom Kiri: Visual & Balok Asimetris (5 Kolom Grid) -->
+          <div class="lg:col-span-5 relative order-2 lg:order-1">
+            <div class="relative w-full max-w-md mx-auto lg:ml-0">
+              
+              <!-- Balok Arang Gelap (#232325) Kiri Atas -->
+              <div class="absolute -top-6 -left-6 w-36 sm:w-44 h-24 sm:h-28 bg-[#232325] z-0"></div>
+
+              <!-- Bingkai Gambar Strategi -->
+              <div class="relative z-10 overflow-hidden shadow-xl bg-zinc-200 group">
+                <img
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop"
+                  alt="Mantik Business Strategy and Planning"
+                  class="w-full h-[380px] sm:h-[420px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <!-- Balok Merah (#851919) Kanan Bawah -->
+              <div class="absolute -bottom-6 -right-6 w-40 sm:w-48 h-20 sm:h-24 bg-[#851919] z-0"></div>
+
+              <!-- Floating Micro-Badge -->
+              <div class="absolute -bottom-3 left-6 z-20 bg-white px-4 py-2.5 shadow-md border border-zinc-200/80 text-xs font-mono text-zinc-800">
+                <span class="text-[#851919] font-semibold mr-1"></span> PURPOSE OVER COMPLEXITY
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Teks & Headline (7 Kolom Grid) -->
+          <div class="lg:col-span-7 flex flex-col items-start order-1 lg:order-2 lg:pl-4">
+            
+            <!-- Eyebrow Pill Langsung di Atas Judul -->
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#fcedec] border border-[#f5d0cf] mb-6">
+              <span class="text-xs sm:text-[13px] font-medium text-[#851919] tracking-tight">
+                Our Perspective
+              </span>
+            </div>
+
+            <!-- Headline Utama (Font-medium, Merah Mantik) -->
+            <h2 class="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold tracking-tight text-[#851919] leading-[1.22] mb-8">
+              Technology Should Create Value, Not Complexity.
+            </h2>
+
+            <!-- Paragraf Isian -->
+            <div class="space-y-6 text-zinc-700 text-[15px] sm:text-base font-normal leading-relaxed text-justify sm:text-left">
+              <p>
+                Bagi kami, teknologi bukan sekadar alat, tetapi bagian dari strategi bisnis. Karena itu, setiap solusi yang kami bangun harus relevan dengan proses bisnis, mudah digunakan, aman, scalable, dan mampu berkembang mengikuti kebutuhan organisasi.
+              </p>
+
+              <p class="text-zinc-600 font-light">
+                Kami tidak mengejar teknologi yang paling kompleks. Kami mencari pendekatan yang paling tepat untuk menyelesaikan masalah, menciptakan efisiensi, dan memberikan nilai yang dapat dirasakan oleh bisnis maupun penggunanya.
+              </p>
+            </div>
+
+            <!-- 4 Nilai Utama Solusi (Cards Minimalis) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10 pt-8 border-t border-zinc-200/80 w-full">
+              <div class="bg-white p-3.5 border border-zinc-200/80 shadow-2xs">
+                <span class="text-[11px] font-mono text-[#851919] block mb-1">01</span>
+                <span class="text-xs font-medium text-zinc-900 block">Relevan</span>
+                <span class="text-[11px] text-zinc-600 block mt-0.5">Sesuai proses</span>
+              </div>
+              <div class="bg-white p-3.5 border border-zinc-200/80 shadow-2xs">
+                <span class="text-[11px] font-mono text-[#851919] block mb-1">02</span>
+                <span class="text-xs font-medium text-zinc-900 block">Intuitive</span>
+                <span class="text-[11px] text-zinc-600 block mt-0.5">Mudah digunakan</span>
+              </div>
+              <div class="bg-white p-3.5 border border-zinc-200/80 shadow-2xs">
+                <span class="text-[11px] font-mono text-[#851919] block mb-1">03</span>
+                <span class="text-xs font-medium text-zinc-900 block">Secure</span>
+                <span class="text-[11px] text-zinc-600 block mt-0.5">Standar keamanan</span>
+              </div>
+              <div class="bg-white p-3.5 border border-zinc-200/80 shadow-2xs">
+                <span class="text-[11px] font-mono text-[#851919] block mb-1">04</span>
+                <span class="text-xs font-medium text-zinc-900 block">Scalable</span>
+                <span class="text-[11px] text-zinc-600 block mt-0.5">Siap bertumbuh</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

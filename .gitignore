@@ -1,0 +1,45 @@
+# ==========================================
+# Frontend (Astro / Node.js)
+# ==========================================
+# Dependencies
+node_modules/
+
+# Build output & generated types
+dist/
+.astro/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ==========================================
+# Backend (Golang)
+# ==========================================
+# Compiled binaries & libraries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+vendor/
+
+
+# ==========================================
+# Environment Variables & Secrets (Global)
+# ==========================================
+.env
+.env.*
+!.env.example
+
+
+# ==========================================
+# OS & IDE Files (Global)
+# ==========================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

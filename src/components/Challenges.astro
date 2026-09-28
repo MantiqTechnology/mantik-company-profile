@@ -1,0 +1,63 @@
+---
+const challenges = [
+  "Pekerjaan berulang menyita waktu dan sumber daya.",
+  "Data dan proses tersebar di berbagai sistem.",
+  "Data yang tidak terhubung menyulitkan monitoring dan pengambilan keputusan.",
+  "Teknologi yang tidak scalable dapat menjadi hambatan bagi pertumbuhan.",
+];
+---
+
+<section class="py-20 lg:py-28 bg-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+      
+      <!-- Kolom Kiri: Box Gelap Konten Teks -->
+      <div class="lg:col-span-6 bg-[#232325] px-8 py-12 sm:px-12 sm:py-16 flex flex-col justify-center relative z-20">
+        
+        <!-- Pill Badge: Business Challenges -->
+        <div class="inline-flex items-center self-start px-4 py-1.5 rounded-full bg-[#e3e4e6] mb-8">
+          <span class="text-xs sm:text-[13px] font-medium text-zinc-800 tracking-tight">
+            Business Challenges
+          </span>
+        </div>
+
+        <!-- Judul Utama (font-medium, proporsional) -->
+        <h2 class="text-2xl sm:text-3xl lg:text-[2.25rem] font-bold tracking-tight text-white leading-tight mb-8">
+          Ketika Bisnis Berkembang, <br class="hidden sm:inline" />
+          Teknologi Harus Ikut <br class="hidden sm:inline" />
+          Berkembang
+        </h2>
+
+        <!-- Daftar Poin Tantangan -->
+        <ul class="space-y-4">
+          {challenges.map((item) => (
+            <li class="flex items-start gap-3.5 text-zinc-300 text-[14px] sm:text-[15px] font-light leading-relaxed">
+              <!-- Bullet Point Bulat Minimalis -->
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-100 mt-2 shrink-0"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+      </div>
+
+      <!-- Kolom Kanan: Foto & Aksen Balok Merah -->
+      <div class="lg:col-span-6 relative mt-10 lg:mt-0 flex flex-col justify-between">
+        
+        <!-- Wadah Gambar Utama -->
+        <div class="relative z-10 w-full h-[320px] sm:h-[400px] lg:h-[88%] overflow-hidden bg-zinc-200 group">
+          <img
+            src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1000&auto=format&fit=crop"
+            alt="Reviewing Business Checklist and Process"
+            class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </div>
+
+        <!-- Balok Merah (#851919) di Bagian Bawah Kanan -->
+        <div class="w-full h-20 sm:h-24 lg:h-[12%] bg-[#851919] relative z-0"></div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

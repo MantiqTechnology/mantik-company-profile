@@ -1,0 +1,152 @@
+---
+const solutions = [
+  {
+    number: "01",
+    title: "Business & Enterprise Solutions",
+    isDark: false,
+    items: [
+      "ERP",
+      "CRM",
+      "HRM",
+      "Finance",
+      "Inventory",
+      "Enterprise System",
+    ],
+    href: "/solusi#enterprise", // <-- Mengarah ke section 01
+  },
+  {
+    number: "02",
+    title: "Digital Platforms",
+    isDark: true,
+    items: [
+      "Website",
+      "E-Commerce",
+      "Customer Portal",
+      "Mobile Application",
+    ],
+    href: "/solusi#digital-platforms", // <-- Mengarah ke section 02
+  },
+  {
+    number: "03",
+    title: "Data & Intelligent Technology",
+    isDark: false,
+    items: [
+      "AI",
+      "Data Solutions",
+      "IoT",
+      "Business Analysis",
+      "Data Analyst",
+    ],
+    href: "/solusi#data-ai", // <-- Mengarah ke section 03
+  },
+];
+---
+
+<section id="solusi" class="py-24 lg:py-32 bg-white relative">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Header Section (Tengah) -->
+    <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+      
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#fcedec] border border-[#f5d0cf] mb-6">
+        <span class="text-xs sm:text-[13px] font-medium text-[#851919]">
+          Our Solutions
+        </span>
+      </div>
+
+      <!-- Judul Utama (Font medium, merah brand Mantik) -->
+      <h2 class="text-2xl sm:text-3xl lg:text-[2.5rem] font-bold tracking-tight text-[#851919] leading-[1.25]">
+        Solusi Digital Untuk Membantu <br class="hidden sm:inline" />
+        Bisnis Bekerja Lebih Baik
+      </h2>
+    </div>
+
+    <!-- 3 Kolom Kartu Solusi -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+      {solutions.map((item) => (
+        <div
+          class={`group relative p-8 sm:p-10 flex flex-col justify-between transition-all duration-400 ease-out hover:-translate-y-2 hover:shadow-xl cursor-pointer overflow-hidden ${
+            item.isDark
+              ? "bg-[#1f263c] text-white shadow-md"
+              : "bg-[#f8f9fa] border border-zinc-200/70 text-zinc-800"
+          }`}
+        >
+          <!-- Watermark Angka Besar di Sudut Kanan Atas -->
+          <span
+            class={`absolute top-4 right-6 text-6xl sm:text-7xl font-bold select-none pointer-events-none transition-all duration-500 group-hover:scale-110 ${
+              item.isDark ? "text-white/10" : "text-zinc-300/60"
+            }`}
+          >
+            {item.number}
+          </span>
+
+          <!-- Konten Atas: Judul & Daftar Poin -->
+          <div class="relative z-10">
+            <h3
+              class={`text-xl sm:text-[22px] font-medium tracking-tight leading-snug mb-8 pr-12 ${
+                item.isDark ? "text-[#e05353]" : "text-zinc-900"
+              }`}
+            >
+              {item.title}
+            </h3>
+
+            <!-- Daftar Layanan / Modul -->
+            <ul class="space-y-2.5">
+              {item.items.map((subItem) => (
+                <li
+                  class={`flex items-center gap-2.5 text-[14px] sm:text-[15px] font-light ${
+                    item.isDark ? "text-zinc-200/90" : "text-zinc-700"
+                  }`}
+                >
+                  <span
+                    class={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                      item.isDark ? "bg-zinc-200" : "bg-zinc-800"
+                    }`}
+                  />
+                  <span>{subItem}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Konten Bawah: Tautan Lihat Detail dengan Hover Panah -->
+          <div class="relative z-10 pt-12">
+            <a
+              href={item.href}
+              class={`inline-flex items-center gap-2 text-[14px] font-medium transition-colors duration-200 ${
+                item.isDark
+                  ? "text-[#e05353] group-hover:text-white"
+                  : "text-zinc-900 group-hover:text-[#851919]"
+              }`}
+            >
+              <span>Lihat Detail</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.75"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Aksen Garis Halus di Bagian Bawah Kartu saat Hover -->
+          <div
+            class={`absolute bottom-0 left-0 w-0 group-hover:w-full h-[3px] transition-all duration-500 ease-out ${
+              item.isDark ? "bg-[#e05353]" : "bg-[#851919]"
+            }`}
+          />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

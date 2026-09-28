@@ -1,0 +1,151 @@
+---
+
+const navLinks = [
+  { name: "About Mantik", href: "#about" },
+  { name: "Solusi & Layanan", href: "#solusi" },
+  { name: "Filosofi Teknologi", href: "#about" },
+  { name: "Diskusi Proyek", href: "#kontak" },
+];
+
+const solusiLinks = [
+  "Enterprise",
+  "Custom Web Development",
+  "Aplikasi Mobile",
+  "Aplikasi Desktop",
+  "Integrasi AI",
+  "IoT",
+  "Cyber Security",
+  "Data Analyst",
+  "Business Intelligence",
+];
+---
+
+<footer id="kontak" class="bg-[#181a20] text-zinc-300 pt-20 pb-12 border-t border-zinc-800/80">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-zinc-800">
+      
+      <!-- Kolom 1: Logo & Tagline Sesuai Gambar 2 (4 Kolom Grid) -->
+      <div class="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-6">
+        <a href="/" class="inline-block mb-6">
+          <img 
+            src="/images/logo_white.png" 
+            alt="Mantik Logo" 
+            class="h-8 w-auto object-contain"
+          />
+        </a>
+
+        <!-- Tagline Putih -->
+        <h3 class="text-white text-base font-medium tracking-tight mb-3">
+          Beyond Technology. Creating Impact.
+        </h3>
+
+        <!-- Deskripsi Perusahaan -->
+        <p class="text-sm font-light text-zinc-400 leading-relaxed max-w-sm">
+          PT Mantik Teknologi Nusantara adalah technology solutions partner yang berfokus membangun solusi digital terintegrasi untuk mendukung efisiensi dan pertumbuhan bisnis.
+        </p>
+      </div>
+
+      <!-- Kolom 2: Navigasi (2 Kolom Grid) -->
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-medium text-white tracking-wider uppercase mb-6">
+          Navigasi
+        </h4>
+        <ul class="space-y-3.5">
+          {navLinks.map((link) => (
+            <li>
+              <a 
+                href={link.href} 
+                class="text-sm font-light text-zinc-400 hover:text-white transition-colors duration-200 inline-block"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Kolom 3: Solusi Sesuai Gambar 1 (3 Kolom Grid) -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-medium text-white tracking-wider uppercase mb-6">
+          Solusi
+        </h4>
+        <ul class="space-y-2.5">
+          {solusiLinks.map((item) => (
+            <li>
+              <a 
+                href="#solusi" 
+                class="text-sm font-light text-zinc-400 hover:text-white transition-colors duration-200 inline-block"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Kolom 4: Hubungi Kami (3 Kolom Grid - Sesuai Kode Kamu) -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-medium text-white tracking-wider uppercase mb-6">
+          Hubungi Kami
+        </h4>
+        
+        <div class="space-y-5 text-sm font-light">
+          
+          <!-- Alamat Kantor -->
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#851919] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span class="text-zinc-300 leading-relaxed">
+              Jl. Gito Gati, Sleman, Ngaglik, Yogyakarta
+            </span>
+          </div>
+
+          <!-- Nomor Telepon -->
+          <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#851919] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <a href="tel:+6287736344743" class="text-zinc-300 hover:text-white transition-colors">
+              +62 877 3634 4743
+            </a>
+          </div>
+
+          <!-- 2 Alamat Email -->
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#851919] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <div class="flex flex-col gap-1">
+              <!-- Email 1: Informasi Umum -->
+              <div>
+                <span class="text-xs text-zinc-500 block">General Inquiry:</span>
+                <a href="mailto:nusantara@mantik.id" class="text-zinc-300 hover:text-white transition-colors">
+                  nusantara@mantik.id
+                </a>
+              </div>
+              <!-- Email 2: Diskusi Bisnis & Proyek -->
+              <div class="mt-1">
+                <span class="text-xs text-zinc-500 block">Business & Partnership:</span>
+                <a href="mailto:mantik.nusantara@gmail.com" class="text-zinc-300 hover:text-white transition-colors">
+                  mantik.nusantara@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar Bawah -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 font-light gap-4">
+      <p>© 2026 PT Mantik Teknologi Nusantara. All rights reserved.</p>
+      <p class="tracking-wide">Technology Solutions Partner</p>
+    </div>
+
+  </div>
+</footer>

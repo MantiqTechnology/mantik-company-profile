@@ -1,0 +1,57 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-zinc-950">
+  <!-- Background Image Arsitektur Monokrom + Dark Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
+      alt="Modern Architecture Background" 
+      class="w-full h-full object-cover grayscale brightness-50 contrast-125 scale-105"
+    />
+    <!-- Gradien layer agar kontras teks tetap optimal -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/40"></div>
+  </div>
+
+  <!-- Konten Hero -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center flex flex-col items-center">
+    
+    <!-- Pill Badge: Technology Solutions Partner -->
+    <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 border border-white/30 backdrop-blur-md mb-8 transition-all hover:bg-white/25">
+      <span class="text-xs md:text-[13px] font-medium tracking-wide text-white">
+        Technology Solutions Partner
+      </span>
+    </div>
+
+    <!-- Judul Utama (Menggunakan font-medium, tidak bold pekat) -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-white leading-[1.2] mb-6">
+      Mengubah Tantangan Bisnis <br class="hidden sm:inline" />
+      Menjadi Solusi Digital.
+    </h1>
+
+    <!-- Deskripsi Paragraf -->
+    <p class="text-sm sm:text-base md:text-[15px] font-light text-zinc-200/90 leading-relaxed max-w-2xl mx-auto mb-10 tracking-normal">
+      Kami membantu perusahaan, organisasi, dan institusi merancang, membangun, dan mengintegrasikan solusi teknologi yang relevan dengan kebutuhan bisnis untuk menyederhanakan proses, menghubungkan sistem, dan mendukung pertumbuhan.
+    </p>
+
+    <!-- Tombol Aksi (CTA) -->
+    <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+      <!-- Tombol Kiri: Mulai Diskusi -->
+      <a 
+        href="#cta"
+        class="w-full sm:w-44 py-3 px-6 rounded-xs bg-[#e2e4e7] hover:bg-white text-[#851919] text-sm font-medium tracking-wide transition-all duration-200 shadow-md flex items-center justify-center"
+      >
+        Mulai Diskusi
+      </a>
+
+      <!-- Tombol Kanan: Lihat Solusi -->
+      <a 
+        href="#solusi"
+        class="w-full sm:w-44 py-3 px-6 rounded-xs bg-[#851919] hover:bg-[#6d1313] text-white text-sm font-medium tracking-wide transition-all duration-200 shadow-md flex items-center justify-center"
+      >
+        Lihat Solusi
+      </a>
+    </div>
+
+  </div>
+</section>

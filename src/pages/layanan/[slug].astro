@@ -1,0 +1,282 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+// 1. Data Spesifik untuk 9 Layanan Mantik
+export async function getStaticPaths() {
+  const services = [
+    {
+      slug: "enterprise",
+      title: "Enterprise Solutions",
+      category: "Layanan 01",
+      tagline: "Arsitektur sistem berskala besar untuk integrasi seluruh alur kerja bisnis.",
+      overview: "Kami membantu korporasi dan institusi membangun Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), serta sistem inti perusahaan yang modular, aman, dan siap bertumbuh bersama skala bisnis Anda.",
+      deliverables: [
+        { title: "Sistem ERP & CRM Kustom", desc: "Dirancang sesuai alur kerja departemen Anda, bukan memaksa bisnis menyesuaikan template." },
+        { title: "Audit & Integrasi Database", desc: "Konsolidasi data terpusat dari berbagai cabang dan divisi." },
+        { title: "Keamanan Standar Industri", desc: "Hak akses berlapis, enkripsi data, dan pencatatan audit log lengkap." },
+        { title: "Dukungan Skalabilitas Tinggi", desc: "Performa tangguh saat menangani jutaan transaksi secara simultan." }
+      ],
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "custom-web-development",
+      title: "Custom Web Development",
+      category: "Layanan 02",
+      tagline: "Platform web cepat, aman, dan berorientasi pada konversi serta efisiensi operasional.",
+      overview: "Kami merancang aplikasi web modern yang bukan sekadar indah secara visual, namun memiliki performa tinggi, struktur SEO yang solid, dan alur penggunaan (UX) yang memudahkan pengguna.",
+      deliverables: [
+        { title: "Web Application & Portal", desc: "Aplikasi berbasis web untuk otomasi proses bisnis internal maupun eksternal." },
+        { title: "E-Commerce & Payment Gateway", desc: "Toko daring terintegrasi dengan beragam kanal pembayaran nasional." },
+        { title: "Arsitektur Jamstack / SSR Modern", desc: "Kecepatan akses halaman maksimal dengan konsumsi server yang efisien." },
+        { title: "Content Management Kustom", desc: "Kemudahan manajemen konten tanpa ketergantungan plugin pihak ketiga yang rentan." }
+      ],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "aplikasi-mobile",
+      title: "Aplikasi Mobile",
+      category: "Layanan 03",
+      tagline: "Pengalaman mobile intuitif di platform iOS dan Android untuk menjangkau pengguna di mana saja.",
+      overview: "Mengembangkan aplikasi mobile native maupun cross-platform dengan waktu muat cepat, navigasi yang intuitif, serta sinkronisasi data *real-time* ke server backend.",
+      deliverables: [
+        { title: "Aplikasi iOS & Android", desc: "Pengembangan menyeluruh dari rancangan wireframe hingga publish ke Store." },
+        { title: "Push Notification & Engagement", desc: "Strategi retensi pengguna berbasis pesan instan dan notifikasi pintar." },
+        { title: "Fitur Offline-First", desc: "Aplikasi tetap dapat digunakan mencatat data meski jaringan internet terputus." },
+        { title: "Integrasi API Cepat", desc: "Konektivitas langsung ke API backend Golang dengan payload ringan." }
+      ],
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "aplikasi-desktop",
+      title: "Aplikasi Desktop",
+      category: "Layanan 04",
+      tagline: "Perangkat lunak desktop tangguh untuk komputasi lokal, point of sale, dan pengolahan data berat.",
+      overview: "Solusi aplikasi desktop yang dapat berkomunikasi langsung dengan hardware khusus (printer thermal, barcode scanner, mesin industri) dan beroperasi tanpa hambatan latensi browser.",
+      deliverables: [
+        { title: "Aplikasi Kasir (POS) & Logistik", desc: "Cepat, andal, dan siap menangani antrian transaksi toko atau gudang." },
+        { title: "Integrasi Perangkat Keras", desc: "Komunikasi langsung dengan port serial, USB, sensor, dan timbangan digital." },
+        { title: "Dukungan Multi-OS", desc: "Dapat berjalan konsisten di sistem operasi Windows, macOS, dan Linux." },
+        { title: "Penyimpanan Lokal Terproteksi", desc: "Basis data lokal SQLite/PostgreSQL dengan enkripsi penuh." }
+      ],
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "integrasi-ai",
+      title: "Integrasi AI",
+      category: "Layanan 05",
+      tagline: "Menghubungkan kecerdasan buatan ke dalam sistem bisnis untuk efisiensi dan otomasi cerdas.",
+      overview: "Kami membantu bisnis mengadopsi Large Language Models (LLM), pemrosesan dokumen otomatis, chatbot layanan pelanggan kontekstual, hingga algoritma prediksi kebutuhan inventori.",
+      deliverables: [
+        { title: "AI Assistant & Custom Chatbot", desc: "Asisten virtual yang memahami basis data internal dan SOP perusahaan Anda." },
+        { title: "Ekstraksi Dokumen Otomatis", desc: "Membaca invoice, KTP, atau formulir fisik menjadi data tabular digital secara instan." },
+        { title: "Analisis Sentimen & Klasifikasi", desc: "Memantau kepuasan pelanggan secara real-time dari data pesan masuk." },
+        { title: "API AI Private & Aman", desc: "Data perusahaan tidak dibagikan ke publik untuk melatih model umum." }
+      ],
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "iot",
+      title: "Internet of Things (IoT)",
+      category: "Layanan 06",
+      tagline: "Menjembatani dunia fisik dan digital melalui telemetri sensor dan kontrol jarak jauh.",
+      overview: "Membangun ekosistem IoT mulai dari integrasi mikrokontroler perangkat keras, jalur komunikasi MQTT/WebSocket, hingga dashboard pemantauan kondisi lingkungan dan mesin secara langsung.",
+      deliverables: [
+        { title: "Monitoring Sensor Real-Time", desc: "Pemantauan suhu, kelembaban, tekanan, dan getaran mesin pabrik 24/7." },
+        { title: "Sistem Peringatan Dini", desc: "Alarm otomatis via WhatsApp atau Email saat ambang batas sensor terlewati." },
+        { title: "Otomasi Kendali Jarak Jauh", desc: "Perintah switch dan relay otomatis melalui portal aplikasi web/mobile." },
+        { title: "Manajemen Armada (GPS Tracker)", desc: "Pelacakan rute dan status aset kendaraan bergerak di peta interaktif." }
+      ],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "cyber-security",
+      title: "Cyber Security",
+      category: "Layanan 07",
+      tagline: "Melindungi infrastruktur digital, integritas data, dan reputasi bisnis dari ancaman siber.",
+      overview: "Memberikan layanan pengujian celah keamanan (Penetration Testing), evaluasi arsitektur sistem, serta penyusunan pedoman kepatuhan keamanan data organisasi Anda.",
+      deliverables: [
+        { title: "Vulnerability Assessment & Pen-Test", desc: "Simulasi serangan siber untuk menemukan celah sebelum dimanfaatkan pihak luar." },
+        { title: "Audit Arsitektur Cloud", desc: "Pemeriksaan konfigurasi firewall, IAM, dan enkripsi server cloud." },
+        { title: "Rencana Pemulihan Bencana (DRP)", desc: "Strategi backup data berkala dan pemulihan cepat saat terjadi insiden." },
+        { title: "Laporan Audit Resmi & Mitigasi", desc: "Dokumen temuan terstruktur beserta langkah perbaikan yang jelas." }
+      ],
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "data-analyst",
+      title: "Data Analyst",
+      category: "Layanan 08",
+      tagline: "Mengubah data mentah yang tersebar menjadi wawasan bisnis yang jelas dan bernilai.",
+      overview: "Membantu tim Anda mengumpulkan, membersihkan, dan menganalisa tren data operasional agar setiap keputusan strategis didasari oleh bukti data yang akurat, bukan sekadar intuisi.",
+      deliverables: [
+        { title: "Pembersihan & Pipeline ETL", desc: "Otomasi pemindahan dan validasi data dari aneka sumber ke satu data warehouse." },
+        { title: "Analisis Pola Perilaku Pelanggan", desc: "Menemukan segmen pelanggan dengan profitabilitas dan loyalitas tertinggi." },
+        { title: "Forecasting & Prediksi Tren", desc: "Model estimasi penjualan dan beban operasional di masa mendatang." },
+        { title: "Laporan Kinerja Departemen", desc: "Ringkasan metrik performa berkala untuk evaluasi pimpinan." }
+      ],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      slug: "business-intelligence",
+      title: "Business Intelligence",
+      category: "Layanan 09",
+      tagline: "Visualisasi metrik kunci dan KPI perusahaan dalam dashboard interaktif satu layar.",
+      overview: "Menyajikan data penting organisasi secara visual, dinamis, dan terhubung langsung. Memberikan transparansi penuh bagi manajemen untuk mengambil tindakan secara cepat.",
+      deliverables: [
+        { title: "Executive Dashboard Real-Time", desc: "Pantau revenue, margin, dan arus kas dalam visualisasi grafik yang mudah dipahami." },
+        { title: "Drill-Down Metrics", desc: "Eksplorasi data dari level agregat perusahaan hingga ke transaksi individual." },
+        { title: "Otomasi Laporan Terjadwal", desc: "Distribusi laporan format PDF atau spreadsheet langsung ke inbox manajemen." },
+        { title: "Integrasi Multi-Platform", desc: "Terkoneksi ke Google Analytics, database internal, spreadsheet, dan sistem ERP." }
+      ],
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1000&auto=format&fit=crop"
+    },
+  ];
+
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout 
+  title={`${service.title} - Layanan Mantik`} 
+  description={service.tagline}
+>
+  <Navbar />
+
+  <main class="pt-20 bg-white min-h-screen">
+    
+    <!-- ==============================================
+         1. HERO SECTION LAYANAN
+    =============================================== -->
+    <section class="relative py-20 lg:py-28 bg-[#181a20] text-white overflow-hidden">
+      <!-- Background Aksen Halus -->
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <!-- Eyebrow & Category -->
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">
+            {service.category} |
+          </span>
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium text-zinc-200">
+            Layanan Spesialis
+          </div>
+        </div>
+
+        <!-- Judul Layanan -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6 leading-tight">
+          {service.title}
+        </h1>
+
+        <!-- Tagline -->
+        <p class="text-base sm:text-lg lg:text-xl font-light text-zinc-300 max-w-3xl leading-relaxed">
+          {service.tagline}
+        </p>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         2. ISI SECTION (PENJELASAN & DELIVERABLES)
+    =============================================== -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Sisi Kiri: Narasi & Foto (6 Kolom) -->
+          <div class="lg:col-span-6 flex flex-col">
+            <h2 class="text-2xl sm:text-3xl font-medium text-[#851919] tracking-tight mb-6">
+              Pendekatan Solutif Kami
+            </h2>
+
+            <p class="text-[15px] sm:text-base font-normal text-zinc-700 leading-relaxed mb-8">
+              {service.overview}
+            </p>
+
+            <!-- Foto Layanan dengan Balok Aksen Merah Mantik -->
+            <div class="relative w-full max-w-lg mt-4">
+              <div class="absolute -bottom-4 -right-4 w-36 h-24 bg-[#851919] z-0"></div>
+              <div class="relative z-10 overflow-hidden shadow-lg bg-zinc-200">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  class="w-full h-[280px] sm:h-[340px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Sisi Kanan: 4 Kartu Fitur / Deliverables (6 Kolom) -->
+          <div class="lg:col-span-6 flex flex-col pt-2">
+            <h3 class="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">
+              Deliverables & Kapabilitas Teknis 
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {service.deliverables.map((item, index) => (
+                <div class="p-6 bg-zinc-50 border border-zinc-200/80 rounded-xs hover:border-[#851919]/50 transition-colors">
+                  <span class="text-xs font-mono text-[#851919] font-medium block mb-2">
+                    0{index + 1}
+                  </span>
+                  <h4 class="text-base font-medium text-zinc-900 mb-2">
+                    {item.title}
+                  </h4>
+                  <p class="text-xs sm:text-[13px] font-light text-zinc-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         3. CTA SECTION (AJAKAN DISKUSI)
+    =============================================== -->
+    <section class="py-20 bg-zinc-50 border-t border-zinc-200/80">
+      <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+        
+        <span class="text-xs font-mono tracking-widest text-[#851919] uppercase mb-4">
+          Konsultasikan Kebutuhan Anda
+        </span>
+
+        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-zinc-900 mb-4">
+          Tertarik Mengembangkan Solusi {service.title}?
+        </h3>
+
+        <p class="text-sm sm:text-base font-light text-zinc-600 max-w-xl mb-8 leading-relaxed">
+          Diskusikan tantangan teknis Anda bersama tim engineer Mantik. Kami siap membantu memetakan arsitektur sistem yang tepat bagi bisnis Anda.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <a 
+            href="/#kontak"
+            class="px-8 py-3.5 bg-[#851919] hover:bg-[#6c1414] text-white text-sm font-medium tracking-wide transition-all rounded-xs shadow-xs"
+          >
+            Hubungi Kami Sekarang
+          </a>
+          <a 
+            href="/about"
+            class="px-8 py-3.5 border border-zinc-300 hover:border-zinc-800 text-zinc-700 text-sm font-medium tracking-wide transition-all rounded-xs"
+          >
+            Tentang Mantik
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

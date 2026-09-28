@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Data Dummy 24 Proyek
+const projects = [
+  {
+    id: 1,
+    title: "ERP SaaS - Fimosa ",
+    category: "Enterprise",
+    desc: "Pengembangan produk SaaS ERP untuk mengintegrasikan proses bisnis dalam satu sistem yang terstruktur, efisien, dan scalable.",
+    image: "/images/proyek1.png",
+  },
+  {
+    id: 2,
+    title: "Portal Alumni Teknik Sipil UAJY",
+    category: "Custom Web",
+    desc: "Pengembangan portal digital IKALTS UAJY sebagai pusat informasi dan aktivitas komunitas alumni, yang mendukung komunikasi terpusat serta meningkatkan keterhubungan dan engagement antaralumni.",
+    image: "/images/proyek2.png",
+  },
+  {
+    id: 3,
+    title: "ERP Manajemen Proyek",
+    category: "Enterprise",
+    desc: "Pengembangan ERP manajemen proyek terintegrasi untuk dashboard, finansial, perencanaan, SDM, pelaporan, dan monitoring guna meningkatkan visibilitas proyek dan efisiensi pengelolaan sumber daya.",
+    image: "/images/proyek3.png",
+  },
+  {
+    id: 4,
+    title: "SIAKAD Berbasis Gamifikasi",
+    category: "Custom Web",
+    desc: "Pengembangan SIAKAD berbasis gamifikasi yang meningkatkan pengalaman dan engagement pengguna melalui interaksi akademik yang lebih interaktif dan menarik.",
+    image: "/images/proyek4.png",
+  },
+  {
+    id: 5,
+    title: "Construction ERP & BOQ System",
+    category: "Enterprise",
+    desc: "Pengembangan Construction ERP yang mengintegrasikan BOQ, procurement, supplier, material, inventory, project management, dan progress monitoring untuk meningkatkan efisiensi operasional, visibilitas proyek, dan pengelolaan sumber daya.",
+    image: "/images/proyek5.png",
+  },
+  {
+    id: 6,
+    title: "Sistem Informasi Manajemen Bantuan Sosial",
+    category: "Custom Web",
+    desc: "Pengembangan sistem manajemen bantuan sosial dengan pengelolaan data terpusat untuk meningkatkan efisiensi administrasi, mempermudah rekapitulasi, serta menghasilkan laporan terstruktur untuk mendukung monitoring dan pengambilan keputusan.",
+    image: "/images/proyek6.png",
+  },
+  {
+    id: 7,
+    title: "Dashboard Movieku",
+    category: "Dashboard",
+    desc: "Pengembangan dashboard interaktif Movieku untuk menyajikan dan memvisualisasikan data secara informatif, sehingga memudahkan eksplorasi data, identifikasi tren, serta pemahaman insight secara lebih cepat dan intuitif.",
+    image: "/images/proyek7.png",
+  },
+  {
+    id: 8,
+    title: "POS & Inventory Coffee Shop SMK Bosa",
+    category: "Custom Web",
+    desc: "Pengembangan sistem operasional coffee shop untuk mengelola pesanan, inventaris, stok, dan pre-order guna meningkatkan efisiensi dan akurasi operasional.",
+    image: "/images/proyek8.png",
+  },
+  {
+    id: 9,
+    title: "Mini AI Sales Prediction System",
+    category: "Artificial Intelligence",
+    desc: "Pengembangan sistem prediksi penjualan berbasis AI yang mengintegrasikan aplikasi fullstack dan machine learning untuk mengklasifikasikan produk berdasarkan potensi penjualan.",
+    image: "/images/proyek9.png",
+  },
+  {
+    id: 10,
+    title: "HRIS Application",
+    category: "Custom Web",
+    desc: "Pengembangan HRIS terintegrasi untuk mengelola data karyawan, absensi, struktur organisasi, tunjangan, akses berbasis peran, dan pelaporan secara terpusat dan efisien.",
+    image: "/images/proyek10.png",
+  },
+  {
+    id: 11,
+    title: "Sistem Informasi Manajemen Jemaat Gereja",
+    category: "Custom Web",
+    desc: "Pengembangan sistem informasi manajemen jemaat untuk mengelola data secara terpusat serta mendukung efisiensi administrasi dan pelayanan gereja.",
+    image: "/images/proyek11.png",
+  },
+  {
+    id: 12,
+    title: "Sistem Informasi SIMA Rejeki Baru",
+    category: "Custom Web",
+    desc: "Pengembangan sistem informasi SIMA Rejeki Baru untuk mengintegrasikan pengelolaan data dan proses operasional secara lebih efektif dan terstruktur.",
+    image: "/images/proyek12.png",
+  },
+  {
+    id: 13,
+    title: "Sistem Informasi & Visualisasi Capaian Akademik (SISKA)",
+    category: "Custom Web",
+    desc: "Pengembangan sistem informasi capaian akademik untuk mengolah dan memvisualisasikan data akademik menjadi informasi yang terstruktur dan mudah dipahami.",
+    image: "/images/proyek13.png",
+  },
+  {
+    id: 14,
+    title: "Sistem PJU",
+    category: "IoT",
+    desc: "Pengembangan sistem informasi PJU untuk mendukung pengelolaan, pemantauan, dan penyajian data penerangan jalan umum secara terpusat dan efisien.",
+    image: "/images/proyek14.png",
+  },
+  {
+    id: 15,
+    title: "Sistem Informasi Architecture Showcase",
+    category: "Custom Web",
+    desc: "Pengembangan platform digital Architecture Showcase untuk menampilkan portofolio, karya, dan informasi proyek arsitektur secara terstruktur dan menarik.",
+    image: "/images/proyek15.png",
+  },
+  {
+    id: 16,
+    title: "Sistem Informasi Prediksi Panen Pertanian",
+    category: "Custom Web",
+    desc: "Pengembangan sistem prediksi panen untuk mengolah data pertanian menjadi informasi prediktif yang mendukung pengambilan keputusan",
+    image: "/images/proyek16.png",
+  },
+  {
+    id: 17,
+    title: "Sistem Informasi SmartYandu",
+    category: "Custom Web",
+    desc: "Pengembangan sistem informasi SmartYandu untuk mengelola data, administrasi, dan informasi pelayanan Posyandu secara terpusat, efektif, dan terstruktur.",
+    image: "/images/proyek17.png",
+  },
+  {
+    id: 18,
+    title: "Visualisasi Data Penjualan Event Organizer",
+    category: "Custom Web",
+    desc: "Pengembangan dashboard visualisasi data penjualan untuk mengubah data transaksi event organizer menjadi informasi yang informatif, sehingga memudahkan analisis dan pemantauan performa penjualan.",
+    image: "/images/proyek18.png",
+  },
+  {
+    id: 19,
+    title: "Company Profile - Bimbingan Belajar",
+    category: "Company Profile",
+    desc: "Pengembangan landing page company profile bimbingan belajar yang informatif dan profesional untuk memperkenalkan layanan, program, serta keunggulan lembaga kepada calon pengguna.",
+    image: "/images/proyek19.png",
+  },
+  {
+    id: 20,
+    title: "Fashion Brand E-Commerce Fashion",
+    category: "Katalog",
+    desc: "Pengembangan frontend e-commerce fashion dengan antarmuka modern dan responsif untuk meningkatkan pengalaman pengguna dalam menjelajahi dan memilih produk.",
+    image: "/images/proyek20.png",
+  },
+  {
+    id: 21,
+    title: "Company Profile - Arsitektur & Properti",
+    category: "Company Profile",
+    desc: "Pengembangan landing page company profile yang merepresentasikan identitas profesional serta menampilkan portofolio perusahaan di bidang arsitektur dan properti secara informatif dan elegan.",
+    image: "/images/proyek21.png",
+  },
+  {
+    id: 22,
+    title: "UI/UX Sistem Rekrutmen Panitia Kegiatan Mahasiswa",
+    category: "UI/UX",
+    desc: "Perancangan UI/UX sistem rekrutmen panitia kegiatan mahasiswa untuk menyederhanakan alur pendaftaran, seleksi, dan pengelolaan calon panitia melalui antarmuka yang intuitif.",
+    image: "/images/proyek22.png",
+  },
+  {
+    id: 23,
+    title: "UI/UX Platform Game & Tournament Streaming",
+    category: "UI/UX",
+    desc: "Perancangan UI/UX platform game dan tournament streaming dengan pengalaman pengguna yang intuitif untuk mendukung aktivitas menonton, mengikuti turnamen, dan menjelajahi konten gaming.",
+    image: "/images/proyek23.png",
+  },
+];
+---
+
+<Layout 
+  title="Daftar Proyek - PT Mantik Teknologi Nusantara"
+  description="Koleksi portofolio solusi teknologi, integrasi sistem, dan aplikasi digital yang dibangun oleh Mantik."
+>
+  <Navbar />
+
+  <main class="pt-20 bg-white min-h-screen">
+    
+    <!-- Hero Banner Halaman Proyek -->
+    <section class="py-16 sm:py-24 bg-zinc-50 border-b border-zinc-200/80 relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 text-center flex flex-col items-center">
+        
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#fcedec] border border-[#f5d0cf] mb-6">
+          <span class="text-xs sm:text-[13px] font-medium text-[#851919] tracking-tight">
+            Portofolio & Rekam Jejak
+          </span>
+        </div>
+
+        <!-- Judul Halaman -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-900 leading-[1.2] mb-6">
+          Solusi Yang Telah Kami Bangun
+        </h1>
+
+        <!-- Deskripsi Singkat -->
+        <p class="text-sm sm:text-base font-light text-zinc-600 max-w-2xl leading-relaxed">
+          Eksplorasi berbagai implementasi sistem informasi, platform web, aplikasi mobile, hingga solusi data cerdas yang dirancang khusus untuk memecahkan tantangan bisnis.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Grid 24 Kartu Proyek -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((item) => (
+            <div class="group bg-white border border-zinc-200/80 rounded-xs overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#851919]/40 flex flex-col justify-between">
+              
+              <div>
+                <!-- Wadah Foto Proyek -->
+                <div class="relative h-52 w-full overflow-hidden bg-zinc-100">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop';"
+                  />
+                  <!-- Kategori Badge di Sudut Foto -->
+                  <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 text-[11px] font-mono text-[#851919] tracking-wider rounded-2xs border border-zinc-200/60 shadow-xs">
+                    {item.category}
+                  </div>
+                </div>
+
+                <!-- Konten Teks -->
+                <div class="p-6">
+                  <span class="text-xs font-mono text-zinc-400 block mb-2">
+                    Proyek {item.id < 10 ? `0${item.id}` : item.id} 
+                  </span>
+
+                  <!-- Nama Proyek -->
+                  <h2 class="text-lg font-medium text-zinc-900 group-hover:text-[#851919] transition-colors leading-snug mb-3">
+                    {item.title}
+                  </h2>
+
+                  <!-- Deskripsi Singkat -->
+                  <p class="text-[13px] sm:text-[14px] font-light text-zinc-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Bar Garis Bawah saat Hover -->
+              <div class="w-full px-6 pb-6 pt-2 flex items-center gap-2 text-xs font-medium text-[#851919] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <!-- <span>Pelajari Solusi</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>  -->
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

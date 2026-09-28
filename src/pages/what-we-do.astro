@@ -1,0 +1,379 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// 1. Data 6 Langkah Pendekatan (Our Approach) Sesuai Gambar
+const approachSteps = [
+  {
+    name: "Understand",
+    sub: "01. Pemahaman Masalah",
+    desc: "Memahami proses, kebutuhan, tantangan, dan sasaran bisnis sebelum merancang teknologi.",
+  },
+  {
+    name: "Design",
+    sub: "02. Perancangan Solusi",
+    desc: "Merancang arsitektur sistem, alur proses, dan prototipe visual yang intuitif & scalable.",
+  },
+  {
+    name: "Build",
+    sub: "03. Pengembangan Sistem",
+    desc: "Membangun perangkat lunak dengan clean code, performa tinggi, dan pengujian ketat.",
+  },
+  {
+    name: "Integrate",
+    sub: "04. Integrasi Teknologi",
+    desc: "Menghubungkan platform baru dengan sistem eksisting, database, dan infrastruktur organisasi.",
+  },
+  {
+    name: "Improve",
+    sub: "05. Peningkatan Berkelanjutan",
+    desc: "Memantau performa, optimasi berkala, dan penyesuaian fitur seiring pertumbuhan bisnis.",
+  },
+  {
+    name: "Impact",
+    sub: "06. Dampak Nyata",
+    desc: "Menghasilkan efisiensi operasional terukur, keamanan data, dan nilai tambah jangka panjang.",
+  },
+];
+
+// 2. Data 9 Layanan (What We Do)
+const servicesList = [
+  {
+    title: "Enterprise",
+    slug: "enterprise",
+    desc: "Arsitektur ERP, CRM, dan sistem operasional bisnis terintegrasi skala besar.",
+  },
+  {
+    title: "Custom Web Development",
+    slug: "custom-web-development",
+    desc: "Platform web performa tinggi, portal korporat, dan sistem e-commerce andal.",
+  },
+  {
+    title: "Aplikasi Mobile",
+    slug: "aplikasi-mobile",
+    desc: "Pengembangan aplikasi native & cross-platform (iOS/Android) dengan UX intuitif.",
+  },
+  {
+    title: "Aplikasi Desktop",
+    slug: "aplikasi-desktop",
+    desc: "Perangkat lunak desktop untuk komputasi lokal, point of sale, dan integrasi hardware.",
+  },
+  {
+    title: "Integrasi AI",
+    slug: "integrasi-ai",
+    desc: "Automasi cerdas, Large Language Models (LLM), dan ekstraksi dokumen otomatis.",
+  },
+  {
+    title: "IoT",
+    slug: "iot",
+    desc: "Konektivitas telemetri sensor hardware industri dan sistem kontrol jarak jauh.",
+  },
+  {
+    title: "Cyber Security",
+    slug: "cyber-security",
+    desc: "Penetration testing, audit keamanan infrastruktur cloud, dan kepatuhan data.",
+  },
+  {
+    title: "Data Analyst",
+    slug: "data-analyst",
+    desc: "Pipeline data ETL, pembersihan data mentah, dan pemodelan analisis prediktif.",
+  },
+  {
+    title: "Business Intelligence",
+    slug: "business-intelligence",
+    desc: "Dashboard interaktif eksekutif untuk visualisasi metrik kunci dan evaluasi KPI.",
+  },
+];
+---
+
+<Layout 
+  title="What We Do & Our Approach - PT Mantik Teknologi Nusantara"
+  description="Layanan spesialis Mantik dan metodologi pendekatan bertahap: Understand, Design, Build, Integrate, Improve, hingga Impact."
+>
+  <Navbar />
+
+  <main class="pt-20 bg-white min-h-screen overflow-hidden">
+    
+    <!-- ==============================================
+         HERO BANNER
+    =============================================== -->
+    <section class="py-20 lg:py-24 bg-[#181a20] text-white relative">
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:18px_18px]"></div>
+      
+      <div class="max-w-6xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 mb-6">
+          <span class="text-xs sm:text-[13px] font-medium text-red-200 tracking-tight">
+            Kapabilitas & Metodologi
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-[3.25rem] font-medium tracking-tight text-white leading-[1.2] mb-6 max-w-4xl">
+          Solusi Yang Kami Bangun & Cara Kami Bekerja
+        </h1>
+
+        <p class="text-sm sm:text-base lg:text-lg font-light text-zinc-300 max-w-2xl leading-relaxed">
+          Mengombinasikan keahlian teknis di berbagai platform dengan metodologi terstruktur untuk menghasilkan teknologi yang berdampak nyata bagi bisnis Anda.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 1: OUR APPROACH (VISUAL FLOW SESUAI GAMBAR)
+    =========================================================== -->
+    <section class="py-24 lg:py-32 bg-[#fafafa] border-b border-zinc-200/80 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-20">
+          <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#fcedec] border border-[#f5d0cf] mb-4">
+            <span class="text-xs font-medium text-[#851919] uppercase tracking-wide">
+              Our Approach
+            </span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-zinc-900 leading-tight">
+            Enam Tahap Menghadirkan Dampak Teknologi
+          </h2>
+          <p class="text-sm font-light text-zinc-600 mt-4 leading-relaxed">
+            Metodologi siklus berulang yang memastikan setiap baris kode yang ditulis menjawab kebutuhan strategis organisasi.
+          </p>
+        </div>
+
+        <!-- ===============================================
+             DIAGRAM ALUR DESKTOP (Persis Sesuai Gambar)
+        ================================================ -->
+        <div class="hidden lg:block max-w-5xl mx-auto relative px-4">
+          
+          <!-- BARIS 1: Understand -> Design -> Build -->
+          <div class="grid grid-cols-3 gap-8 items-start relative pb-16">
+            
+            <!-- 1. Understand -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="w-32 h-32 rounded-full bg-[#9e1616] flex items-center justify-center text-white shadow-xl shadow-red-950/15 mb-6 transition-transform duration-300 group-hover:scale-105">
+                <!-- Icon Dialog / Chat -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-zinc-900 mb-2">Understand</h3>
+              <p class="text-xs font-light text-zinc-600 leading-relaxed max-w-xs">{approachSteps[0].desc}</p>
+            </div>
+
+            <!-- Panah Kanan 1 (Understand -> Design) -->
+            <div class="absolute left-[29%] top-12 -translate-y-1/2 text-[#c24b27]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-current" viewBox="0 0 24 24">
+                <path d="M4 11h11.17l-4.58-4.59L12 5l7 7-7 7-1.41-1.41L15.17 13H4v-2z"/>
+              </svg>
+            </div>
+
+            <!-- 2. Design -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="w-32 h-32 rounded-full bg-[#9e1616] flex items-center justify-center text-white shadow-xl shadow-red-950/15 mb-6 transition-transform duration-300 group-hover:scale-105">
+                <!-- Icon Lampu & Pensil Ide -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-zinc-900 mb-2">Design</h3>
+              <p class="text-xs font-light text-zinc-600 leading-relaxed max-w-xs">{approachSteps[1].desc}</p>
+            </div>
+
+            <!-- Panah Kanan 2 (Design -> Build) -->
+            <div class="absolute left-[63%] top-12 -translate-y-1/2 text-[#c24b27]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-current" viewBox="0 0 24 24">
+                <path d="M4 11h11.17l-4.58-4.59L12 5l7 7-7 7-1.41-1.41L15.17 13H4v-2z"/>
+              </svg>
+            </div>
+
+            <!-- 3. Build -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="w-32 h-32 rounded-full bg-[#9e1616] flex items-center justify-center text-white shadow-xl shadow-red-950/15 mb-6 transition-transform duration-300 group-hover:scale-105">
+                <!-- Icon Code Browser </> -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-zinc-900 mb-2">Build</h3>
+              <p class="text-xs font-light text-zinc-600 leading-relaxed max-w-xs">{approachSteps[2].desc}</p>
+            </div>
+
+          </div>
+
+          <!-- PANAH KE BAWAH DARI BUILD KE INTEGRATE -->
+          <div class="flex justify-end pr-32 -my-2 text-[#c24b27]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-current" viewBox="0 0 24 24">
+              <path d="M11 4v11.17l-4.59-4.58L5 12l7 7 7-7-1.41-1.41L13 15.17V4h-2z"/>
+            </svg>
+          </div>
+
+          <!-- BARIS 2: Impact <- Improve <- Integrate (Siklus Berbalik Sesuai Gambar) -->
+          <div class="grid grid-cols-3 gap-8 items-start relative pt-8">
+            
+            <!-- 6. Impact (Kiri Bawah) -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="w-32 h-32 rounded-full bg-[#9e1616] flex items-center justify-center text-white shadow-xl shadow-red-950/15 mb-6 transition-transform duration-300 group-hover:scale-105">
+                <!-- Icon Globe / Impact -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-zinc-900 mb-2">Impact</h3>
+              <p class="text-xs font-light text-zinc-600 leading-relaxed max-w-xs">{approachSteps[5].desc}</p>
+            </div>
+
+            <!-- Panah Kiri 1 (Improve -> Impact) -->
+            <div class="absolute left-[29%] top-20 -translate-y-1/2 text-[#c24b27]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-current" viewBox="0 0 24 24">
+                <path d="M20 11H8.83l4.58-4.59L12 5l-7 7 7 7 1.41-1.41L8.83 13H20v-2z"/>
+              </svg>
+            </div>
+
+            <!-- 5. Improve (Tengah Bawah) -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="w-32 h-32 rounded-full bg-[#9e1616] flex items-center justify-center text-white shadow-xl shadow-red-950/15 mb-6 transition-transform duration-300 group-hover:scale-105">
+                <!-- Icon Chart Trend / Pertumbuhan -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-zinc-900 mb-2">Improve</h3>
+              <p class="text-xs font-light text-zinc-600 leading-relaxed max-w-xs">{approachSteps[4].desc}</p>
+            </div>
+
+            <!-- Panah Kiri 2 (Integrate -> Improve) -->
+            <div class="absolute left-[63%] top-20 -translate-y-1/2 text-[#c24b27]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-current" viewBox="0 0 24 24">
+                <path d="M20 11H8.83l4.58-4.59L12 5l-7 7 7 7 1.41-1.41L8.83 13H20v-2z"/>
+              </svg>
+            </div>
+
+            <!-- 4. Integrate (Kanan Bawah) -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="w-32 h-32 rounded-full bg-[#9e1616] flex items-center justify-center text-white shadow-xl shadow-red-950/15 mb-6 transition-transform duration-300 group-hover:scale-105">
+                <!-- Icon Gear & Sync -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-zinc-900 mb-2">Integrate</h3>
+              <p class="text-xs font-light text-zinc-600 leading-relaxed max-w-xs">{approachSteps[3].desc}</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ===============================================
+             DIAGRAM ALUR MOBILE (Responsif Vertikal)
+        ================================================ -->
+        <div class="lg:hidden flex flex-col items-center space-y-6">
+          {approachSteps.map((step, idx) => (
+            <div class="flex flex-col items-center text-center">
+              <div class="w-24 h-24 rounded-full bg-[#9e1616] flex items-center justify-center text-white shadow-lg mb-3">
+                <span class="text-lg font-mono font-bold">0{idx + 1}</span>
+              </div>
+              <h3 class="text-lg font-medium text-zinc-900">{step.name}</h3>
+              <p class="text-xs font-light text-zinc-600 max-w-xs mt-1">{step.desc}</p>
+              
+              {idx < approachSteps.length - 1 && (
+                <div class="my-4 text-[#c24b27]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M11 4v11.17l-4.59-4.58L5 12l7 7 7-7-1.41-1.41L13 15.17V4h-2z"/>
+                  </svg>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 2: WHAT WE DO (9 LAYANAN UTAMA MANTIK)
+    =========================================================== -->
+    <section class="py-24 lg:py-32 bg-white relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#fcedec] border border-[#f5d0cf] mb-4">
+            <span class="text-xs font-medium text-[#851919] uppercase tracking-wide">
+              What We Do
+            </span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-zinc-900 leading-tight">
+            Spektrum Layanan Solusi Digital Mantik
+          </h2>
+          <p class="text-sm font-light text-zinc-600 mt-4 leading-relaxed">
+            Sembilan fokus teknologi kami untuk menjawab kebutuhan operasional, efisiensi, dan pertumbuhan jangka panjang bisnis Anda.
+          </p>
+        </div>
+
+        <!-- 9 Grid Kartu Layanan -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {servicesList.map((service, index) => (
+            <a
+              href={`/layanan/${service.slug}`}
+              class="group p-8 bg-zinc-50 hover:bg-white border border-zinc-200/80 hover:border-[#851919]/50 rounded-xs shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <!-- Tag Nomor Layanan -->
+                <span class="text-xs font-mono text-zinc-400 group-hover:text-[#851919] transition-colors block mb-4">
+                  0{index + 1} 
+                </span>
+
+                <!-- Judul Layanan -->
+                <h3 class="text-lg font-medium text-zinc-900 group-hover:text-[#851919] transition-colors leading-snug mb-3">
+                  {service.title}
+                </h3>
+
+                <!-- Deskripsi Ringkas -->
+                <p class="text-[13px] font-light text-zinc-600 leading-relaxed">
+                  {service.desc}
+                </p>
+              </div>
+
+              <!-- Footer Tautan -->
+              <div class="pt-6 mt-6 border-t border-zinc-200/60 flex items-center justify-between text-xs font-medium text-zinc-800 group-hover:text-[#851919]">
+                <span>Eksplorasi Layanan</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         CTA PENUTUP
+    =============================================== -->
+    <section class="py-20 bg-zinc-900 text-white text-center">
+      <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-2xl sm:text-3xl font-medium mb-4">
+          Tertarik Menerapkan Metodologi Ini untuk Proyek Anda?
+        </h3>
+        <p class="text-sm sm:text-base font-light text-zinc-400 max-w-xl mx-auto mb-8">
+          Diskusikan rencana teknologi Anda bersama tim konsultan Mantik. Kami siap membantu memetakan dari tahap Understand hingga Impact.
+        </p>
+        <a 
+          href="https://wa.me/6287736344743"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-3.5 bg-[#851919] hover:bg-[#6c1414] text-white text-sm font-medium rounded-xs shadow-xs transition-all inline-block"
+        >
+          Konsultasi via WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
